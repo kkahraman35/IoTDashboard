@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.Dashboard.Data", "IoT.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.Dashboard.DebugApp", "IoT.Dashboard.DebugApp\IoT.Dashboard.DebugApp.csproj", "{3B75803F-CFFA-4146-8798-D616AA9AD703}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.Dashboard.Interfaces", "IoT.Dashboard.Interfaces\IoT.Dashboard.Interfaces.csproj", "{4B97CC62-F75E-46D1-A18C-3E315B29067E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{3B75803F-CFFA-4146-8798-D616AA9AD703}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B75803F-CFFA-4146-8798-D616AA9AD703}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B75803F-CFFA-4146-8798-D616AA9AD703}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B97CC62-F75E-46D1-A18C-3E315B29067E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B97CC62-F75E-46D1-A18C-3E315B29067E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B97CC62-F75E-46D1-A18C-3E315B29067E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B97CC62-F75E-46D1-A18C-3E315B29067E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

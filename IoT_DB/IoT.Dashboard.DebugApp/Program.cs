@@ -1,9 +1,8 @@
-﻿using IoT.Dashboard.Data;
+﻿using IoT.Dashboard.Interfaces;
+using Microsoft.Practices.Unity;
+using Microsoft.Practices.Unity.Configuration;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
 
 namespace IoT.Dashboard.DebugApp
 {
@@ -11,10 +10,12 @@ namespace IoT.Dashboard.DebugApp
     {
         static void Main(string[] args)
         {
-            var db = new IoTDbContext();
-            var profile = db.UserProfiles
-                .Where(x => x.UserProfileId == 1)
-                .FirstOrDefault();
+            var container = new UnityContainer();
+            var section = (UnityConfigurationSection)ConfigurationManager.GetSection("unity");
+            section.Configure(container);
+            var repo = container.Resolve<IUserProfilesRepository>();
+
+            var profile = repo.GetUserProfile(1);
 
             Console.WriteLine(profile.UserName);
             Console.ReadKey();
