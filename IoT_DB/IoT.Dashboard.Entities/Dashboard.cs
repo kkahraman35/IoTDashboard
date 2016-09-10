@@ -1,4 +1,6 @@
-﻿namespace IoT.Dashboard.Entities
+﻿using System.Collections.Generic;
+
+namespace IoT.Dashboard.Entities
 {
     public class Dashboard
     {
@@ -9,5 +11,7 @@
         public string Name { get; set; }
 
         public string Type { get; set; }
+
+        public virtual ICollection<DashboardDevice> DashboardDevices { get; set; }
     }
 }

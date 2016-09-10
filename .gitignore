@@ -243,3 +243,4 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/IoT_DB/IoT.Dashboard.DebugApp/App.config
