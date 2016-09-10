@@ -6,6 +6,8 @@
 
         public int UserProfileId { get; set; }
 
+        public string DeviceKey { get; set; }
+
         public string Name { get; set; }
 
         public string Units { get; set; }

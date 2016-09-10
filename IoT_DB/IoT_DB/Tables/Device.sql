@@ -2,9 +2,11 @@
 (
   DeviceId INT IDENTITY NOT NULL
 , UserProfileId INT NOT NULL
+, DeviceKey VARCHAR(10) NOT NULL
 , Name NVARCHAR(50) NOT NULL
 , Units NVARCHAR(50) NOT NULL
 
 , CONSTRAINT PK_Device PRIMARY KEY CLUSTERED (DeviceId)
 , CONSTRAINT FK_Device_UserProfile FOREIGN KEY (UserProfileId) REFERENCES dbo.UserProfile(UserProfileId)
+, CONSTRAINT UQ_Device_DeviceKey UNIQUE(DeviceKey)
 )
