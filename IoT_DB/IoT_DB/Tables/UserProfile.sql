@@ -1,0 +1,9 @@
+﻿CREATE TABLE dbo.UserProfile
+(
+  UserProfileId INT IDENTITY NOT NULL
+, UserName NVARCHAR(50) NOT NULL
+, Salt BINARY(8) NOT NULL
+, PasswordHash BINARY(20) NOT NULL
+
+, CONSTRAINT PK_UserProfile PRIMARY KEY CLUSTERED (UserProfileId)
+)
