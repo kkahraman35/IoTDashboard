@@ -61,6 +61,10 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\UserProfile.sql" />
+    <Build Include="Tables\Device.sql" />
+    <Build Include="Tables\Signal.sql" />
+    <Build Include="Tables\Dashboard.sql" />
+    <Build Include="Tables\DashboardDevice.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="IoT_DB.publish.xml" />
