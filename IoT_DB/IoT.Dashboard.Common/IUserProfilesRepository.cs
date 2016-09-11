@@ -1,6 +1,6 @@
 ﻿using IoT.Dashboard.Entities;
 
-namespace IoT.Dashboard.Interfaces
+namespace IoT.Dashboard.Common
 {
     public interface IUserProfilesRepository
     {

@@ -76,13 +76,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IoT.Dashboard.Interfaces\IoT.Dashboard.Interfaces.csproj">
-      <Project>{4b97cc62-f75e-46d1-a18c-3e315b29067e}</Project>
-      <Name>IoT.Dashboard.Interfaces</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\IoT.Dashboard.Common\IoT.Dashboard.Common.csproj">
+      <Project>{4b97cc62-f75e-46d1-a18c-3e315b29067e}</Project>
+      <Name>IoT.Dashboard.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,4 +1,4 @@
-﻿using IoT.Dashboard.Interfaces;
+﻿using IoT.Dashboard.Common;
 using System.Linq;
 using IoT.Dashboard.Entities;
 

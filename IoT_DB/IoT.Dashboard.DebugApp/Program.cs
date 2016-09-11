@@ -1,4 +1,4 @@
-﻿using IoT.Dashboard.Interfaces;
+﻿using IoT.Dashboard.Common;
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
 using System;

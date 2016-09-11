@@ -1,4 +1,4 @@
-﻿using IoT.Dashboard.Interfaces;
+﻿using IoT.Dashboard.Common;
 using Microsoft.Azure;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Queue;

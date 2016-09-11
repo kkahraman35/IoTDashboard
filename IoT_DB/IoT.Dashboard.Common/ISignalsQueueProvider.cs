@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace IoT.Dashboard.Interfaces
+namespace IoT.Dashboard.Common
 {
     public interface ISignalsQueueProvider : IDisposable
     {
