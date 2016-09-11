@@ -15,22 +15,23 @@ namespace IoT.Dashboard.SignalsQueue
             _signalsQueue = CreateQueue();
         }
 
-        public void AddSignalToQueue(string deviceKey, decimal signalValue, DateTimeOffset signalTime)
+        public void AddSignalToQueue(string deviceKey, string changeKey, decimal signalValue, DateTimeOffset signalTime)
         {
-            var message = SerializeSignal(Tuple.Create(deviceKey, signalValue, signalTime));
+            var message = SerializeSignal(Tuple.Create(deviceKey, changeKey, signalValue, signalTime));
 
             _signalsQueue.AddMessage(new CloudQueueMessage(message));
         }
 
-        public bool GetSignalFromQueue(out string deviceKey, out decimal signalValue, out DateTimeOffset signalTime)
+        public bool GetSignalFromQueue(out string deviceKey, out string changeKey, out decimal signalValue, out DateTimeOffset signalTime)
         {
             var message = _signalsQueue.GetMessage(visibilityTimeout: TimeSpan.FromMilliseconds(500));
             if (message != null)
             {
                 var signal = DeserializeSignal(message.AsString);
                 deviceKey = signal.Item1;
-                signalValue = signal.Item2;
-                signalTime = signal.Item3;
+                changeKey = signal.Item2;
+                signalValue = signal.Item3;
+                signalTime = signal.Item4;
 
                 _signalsQueue.DeleteMessage(message);
 
@@ -38,6 +39,7 @@ namespace IoT.Dashboard.SignalsQueue
             }
 
             deviceKey = default(string);
+            changeKey = default(string);
             signalValue = default(decimal);
             signalTime = default(DateTimeOffset);
 
@@ -61,23 +63,23 @@ namespace IoT.Dashboard.SignalsQueue
             return queue;
         }
 
-        private string SerializeSignal(Tuple<string, decimal, DateTimeOffset> signal)
+        private string SerializeSignal(Tuple<string, string, decimal, DateTimeOffset> signal)
         {
             var stringWriter = new StringWriter();
             var jsonTextWriter = new JsonTextWriter(stringWriter);
             var serializer = new JsonSerializer();
-            serializer.Serialize(jsonTextWriter, Tuple.Create(signal.Item1, signal.Item2, signal.Item3));
+            serializer.Serialize(jsonTextWriter, Tuple.Create(signal.Item1, signal.Item2, signal.Item3, signal.Item4));
 
             return stringWriter.ToString();
         }
 
-        private Tuple<string, decimal, DateTimeOffset> DeserializeSignal(string serialized)
+        private Tuple<string, string, decimal, DateTimeOffset> DeserializeSignal(string serialized)
         {
             var textReader = new StringReader(serialized);
             var jsonTextReader = new JsonTextReader(textReader);
             var serializer = new JsonSerializer();
 
-            return serializer.Deserialize<Tuple<string, decimal, DateTimeOffset>>(jsonTextReader);
+            return serializer.Deserialize<Tuple<string, string, decimal, DateTimeOffset>>(jsonTextReader);
         }
 
         private CloudQueue _signalsQueue;

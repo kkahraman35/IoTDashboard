@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.Dashboard.SignalsQueue"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.Dashboard.Common", "IoT.Dashboard.Common\IoT.Dashboard.Common.csproj", "{4B97CC62-F75E-46D1-A18C-3E315B29067E}"
 EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "IoT.Dashboard.AddSignalService", "IoT.Dashboard.AddSignalService\IoT.Dashboard.AddSignalService.ccproj", "{9526298B-2AED-4B11-A96A-CAD9E3D5A890}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.Dashboard.AddSignalService.Controller", "IoT.Dashboard.AddSignalService.Controller\IoT.Dashboard.AddSignalService.Controller.csproj", "{1F6376B5-74E0-436E-8E2F-A363C0805D67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +51,14 @@ Global
 		{4B97CC62-F75E-46D1-A18C-3E315B29067E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B97CC62-F75E-46D1-A18C-3E315B29067E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B97CC62-F75E-46D1-A18C-3E315B29067E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9526298B-2AED-4B11-A96A-CAD9E3D5A890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9526298B-2AED-4B11-A96A-CAD9E3D5A890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9526298B-2AED-4B11-A96A-CAD9E3D5A890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9526298B-2AED-4B11-A96A-CAD9E3D5A890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F6376B5-74E0-436E-8E2F-A363C0805D67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F6376B5-74E0-436E-8E2F-A363C0805D67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F6376B5-74E0-436E-8E2F-A363C0805D67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F6376B5-74E0-436E-8E2F-A363C0805D67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

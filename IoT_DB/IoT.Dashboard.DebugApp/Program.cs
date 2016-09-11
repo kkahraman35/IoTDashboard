@@ -3,6 +3,7 @@ using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
 using System;
 using System.Configuration;
+using System.ServiceModel;
 
 namespace IoT.Dashboard.DebugApp
 {
@@ -18,11 +19,18 @@ namespace IoT.Dashboard.DebugApp
             //var profile = repo.GetUserProfile(1);
             //Console.WriteLine(profile.UserName);
 
-            var queue = container.Resolve<ISignalsQueueProvider>();
-            queue.AddSignalToQueue("d5GnjP0bdX", 42, DateTimeOffset.Now);
-            string s; decimal d; DateTimeOffset o;
-            queue.GetSignalFromQueue(out s, out d, out o);
+            //var queue = container.Resolve<ISignalsQueueProvider>();
+            //queue.AddSignalToQueue("d5GnjP0bdX", "dddddd", 42, DateTimeOffset.Now);
+            //string s; string h; decimal d; DateTimeOffset o;
+            //queue.GetSignalFromQueue(out s, out h, out d, out o);
 
+            var factory = new ChannelFactory<IAddSignalService>("BasicHttpBinding_IAddSignalService");
+            var channel = factory.CreateChannel();
+            channel.AddSignal("d5GnjP0bdX", "dddddd", 42, DateTimeOffset.Now);
+
+            var queue = container.Resolve<ISignalsQueueProvider>();
+            string s; string h; decimal d; DateTimeOffset o;
+            queue.GetSignalFromQueue(out s, out h, out d, out o);
 
             Console.ReadKey();
         }
