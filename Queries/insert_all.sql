@@ -6,8 +6,8 @@ VALUES (N'елбонций', 0xABCDEF1234, HASHBYTES('sha1', '321роро'));
 
 SELECT * FROM dbo.UserProfile
 
-INSERT dbo.Device (UserProfileId, DeviceKey, Name, Units)
-VALUES (1, 'd5GnjP0bdX', 'Super Puper Device', 'Celsium')
+INSERT dbo.Device (UserProfileId, DeviceKey, ChangeKey, Name, Units)
+VALUES (1, 'd5GnjP0bdX', '4tTMgJX7mBWymRFUgfXjcgioRSrr2LE2F5s4EsLmmsKJ', 'Super Puper Device', 'Celsium')
 
 DECLARE @a INT = 0;
 WHILE @a < 100
@@ -26,5 +26,3 @@ INSERT dbo.Dashboard (UserProfileId, Name, Type)
 VALUES (1, 'My dashboard', '1')
 
 INSERT dbo.DashboardDevice VALUES(1,1)
-
-
