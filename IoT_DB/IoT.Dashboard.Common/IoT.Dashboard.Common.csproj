@@ -7,8 +7,8 @@
     <ProjectGuid>{4B97CC62-F75E-46D1-A18C-3E315B29067E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IoT.Dashboard.Interfaces</RootNamespace>
-    <AssemblyName>IoT.Dashboard.Interfaces</AssemblyName>
+    <RootNamespace>IoT.Dashboard.Common</RootNamespace>
+    <AssemblyName>IoT.Dashboard.Common</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -38,6 +38,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeviceKeyGenerator.cs" />
     <Compile Include="ISignalsQueueProvider.cs" />
     <Compile Include="IUserProfilesRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
